@@ -36,3 +36,19 @@ console.log('Song: ', anotherSong);
 console.log('Author: ', author);
 console.log('Author: ', authorInLine);
 console.log('Duration: ', duration);
+
+
+//Destructuración de Arrays
+
+const dbz : string[] = ['Goku', 'Vegeta', 'Trunks'];
+
+console.log('Personaje 3:', dbz[2]);
+console.log('Personaje 4:', dbz[3] || 'Personaje no encontrado');
+
+//Desestructuración del elemento 3 del array
+const [ ,, p3] = dbz;
+//se podría haber definido todos los pjs anteriores: const [ p1, p2, p3] = dbz;
+console.log('Personaje 3:', p3);
+//Si no existiese posición 4
+const [ ,,, p4 = 'Not Found'] = dbz;
+console.log('Personaje 4:', p4);
