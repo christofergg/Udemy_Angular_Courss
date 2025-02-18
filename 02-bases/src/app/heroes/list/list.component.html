@@ -1,10 +1,17 @@
 <p>list works!</p>
 <h3>Listado de Héroes</h3>
+<div *ngIf="deletedHero; else nothingWasDeleted">
+  <h3>Deleted Hero!<small class="text-danger"> {{ deletedHero }} </small></h3>
+</div>
+<ng-template #nothingWasDeleted>
+  <h3>Non Deleted Heroes!</h3>
+</ng-template>
 
-<h3>Deleted Hero!<small class="text-danger"> xxxx </small></h3>
-<h3>Non Deleted Heroes!</h3>
 
-<button class="btn btn-outline-danger">
+<button
+class="btn btn-outline-danger"
+*ngIf="heroNames.length > 0"
+(click)="removeLastHero()">
   Delete Last Hero
 </button>
 
