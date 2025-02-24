@@ -6,10 +6,15 @@ import { AppComponent } from './app.component';
 import { CounterModule } from './counter/counter.module';
 import { HeroesModule } from './heroes/heroes.module';
 import { DbzModule } from './dbz/dbz.module';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { DragonballPageComponentComponent } from './pages/dragonball/dragonball-page.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
+    DragonballPageComponentComponent,
   ],
   imports: [
     BrowserModule,
