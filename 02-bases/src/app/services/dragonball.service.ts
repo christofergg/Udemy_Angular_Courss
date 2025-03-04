@@ -1,14 +1,17 @@
 import { effect, Injectable, signal, OnInit } from '@angular/core';
 import type { Character } from '../interfaces/Character.interface';
 
+function loadFromLocalStorage() : Character[] {
+  const characters = localStorage.getItem(`Characters`);
+  //FALTAN VALIDACIONES DE JSON INJECTION
+  return characters ? JSON.parse(characters) : [];
+}
+
 @Injectable({providedIn: 'root'})
 export class DragonBallService {
   constructor() { }
 
-  characters = signal<Character[]>([
-    { id : 1, name: 'Goku', power: 9001 },
-    { id : 2, name: 'Vegeta', power: 8000 },
-]);
+  characters = signal<Character[]>(loadFromLocalStorage());
 
 
 //Cada vez que characters cambie, se lanzará el efecto
