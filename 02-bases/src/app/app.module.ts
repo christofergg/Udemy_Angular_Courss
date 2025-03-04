@@ -8,6 +8,7 @@ import { HeroesModule } from './heroes/heroes.module';
 import { DbzModule } from './dbz/dbz.module';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { DragonballPageComponentComponent } from './pages/dragonball/dragonball-page.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DragonballPageComponentComponent } from './pages/dragonball/dragonball-
     HeroesModule,
     DbzModule
   ],
-  providers: [],
+  //HashRouter
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
